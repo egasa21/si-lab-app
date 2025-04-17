@@ -5,6 +5,7 @@ import { AlertCircle, Award, ChevronRight, ClipboardList, Coins, FileBadge } fro
 import Link from "next/link";
 import CourseActivitiesCard from "./components/course-activities-card";
 import Leaderboard from "./components/leaderboard";
+import { Announcement } from "./components/announcement";
 
 export default function Page() {
     // dummy leaderboard data
@@ -17,7 +18,7 @@ export default function Page() {
     ];
 
     return (
-        <div className="py-6 px-4 md:py-8 md:px-6 lg:px-8 xl:px-12 space-y-6 md:space-y-8">
+        <div className="py-6 px-6 md:py-8 md:px-12 lg:px-24 xl:px-24 space-y-6 md:space-y-8">
             {/* Greeting Section */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="space-y-1">
@@ -49,14 +50,11 @@ export default function Page() {
                 </div>
             </div>
 
-            {/* Alert Section */}
-            <Alert className="rounded-md shadow-sm">
-                <AlertCircle className="h-4 w-4 text-yellow-500" />
-                <AlertTitle className="font-semibold">Announcement!</AlertTitle>
-                <AlertDescription className="text-sm text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Libero laudantium impedit vero iste a voluptatibus dignissimos, eaque totam repellendus dolor numquam similique illum tempore recusandae, porro possimus! Culpa.
-                </AlertDescription>
-            </Alert>
+            {/* Announcement Section */}
+            <Announcement
+                title="Announcement!"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Libero laudantium impedit vero iste a voluptatibus dignissimos, eaque totam repellendus dolor numquam similique illum tempore recusandae, porro possimus! Culpa."
+            />
 
             {/* Learning Content Section */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
