@@ -37,7 +37,7 @@ export default function Navbar() {
     return (
         <nav className="w-full border-b bg-white">
             {/* Top bar */}
-            <div className="h-16 flex items-center justify-between px-16">
+            <div className="h-16 flex items-center justify-between px-6 md:px-12 lg:px-24">
                 <div className="text-xl font-bold tracking-tight">SI LAB</div>
                 <div className="flex-1" />
                 <div className="flex items-center gap-4">
@@ -72,7 +72,7 @@ export default function Navbar() {
             </div>
 
             {/* Secondary Nav */}
-            <div className="px-16">
+            <div className="px-6 md:px-12 lg:px-24">
                 <div className="flex gap-6">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
@@ -80,9 +80,9 @@ export default function Navbar() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`pb-3 text-sm font-medium ${isActive
-                                    ? "border-b-2 border-black text-black"
-                                    : "text-gray-500 hover:text-black"
+                                className={`whitespace-nowrap pb-2 md:pb-3 text-sm font-medium transition-colors duration-200 ${isActive
+                                    ? "border-b-2 border-indigo-600 text-indigo-600"
+                                    : "text-gray-500 hover:text-indigo-600"
                                     }`}
                             >
                                 {item.label}

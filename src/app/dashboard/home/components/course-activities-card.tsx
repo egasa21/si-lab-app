@@ -1,4 +1,4 @@
-import { ClipboardList } from "lucide-react";
+import { ClipboardList, ChevronRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 
@@ -11,38 +11,48 @@ type CourseActivitiesCardProps = {
     activities: Activity[];
 };
 
-// Todo: change the colour schema
 const CourseActivitiesCard = ({ activities }: CourseActivitiesCardProps) => {
     return (
-        <div className="mt-4 rounded-md shadow-sm p-4">
-            <div className="flex items-center gap-2">
-                <ClipboardList className="h-6 w-6" />
-                <span className="font-bold">Course Activities</span>
+        <div className="mt-6 rounded-lg bg-white shadow-md overflow-hidden">
+            <div className="px-6 py-4">
+                <div className="flex items-center gap-3">
+                    <ClipboardList className="h-5 w-5 text-indigo-500" />
+                    <h3 className="text-lg font-semibold text-gray-800">Course Activities</h3>
+                </div>
             </div>
-
-            <Separator orientation="horizontal" className="pt-2 mt-2" />
-
-            <div className="flex flex-col">
+            <Separator className="my-2" />
+            <div className="px-6 py-4 space-y-3">
                 {activities.map((activity, index) => (
                     <div
                         key={index}
-                        className="bg-gray-200 flex-col mt-4 p-4 border-l-4 border-yellow-300"
+                        className="bg-gray-50 rounded-md border-l-4 border-indigo-400 py-3 px-4 flex items-center justify-between"
                     >
-                        <p className="font-semibold">On Progress</p>
-                        <div className="flex-row flex justify-between">
-                            <p className="">
-                                <span className="font-bold">{activity.title.split(":")[0]}</span>
-                                {` : ${activity.title.split(":")[1]}`}
+                        <div>
+                            <p className="text-sm font-medium text-gray-600">
+                                <span className="font-bold text-indigo-700">{activity.title.split(":")[0]?.trim()}</span>
+                                {activity.title.split(":")[1] && `: ${activity.title.split(":")[1]?.trim()}`}
                             </p>
-                            <Link href={activity.link} className="underline text-blue-400">
-                                Continue
-                            </Link>
+                            <p className="mt-1 text-xs text-gray-500">Keep going, you're making progress!</p>
                         </div>
+                        <Link
+                            href={activity.link}
+                            className="inline-flex items-center text-sm font-medium text-indigo-600 hover:text-indigo-800 transition-colors duration-200"
+                        >
+                            Continue <ChevronRight className="ml-1 h-4 w-4" />
+                        </Link>
                     </div>
                 ))}
+                {activities.length === 0 && (
+                    <div className="py-4 text-center text-gray-500">
+                        No activities available yet.
+                    </div>
+                )}
             </div>
         </div>
     );
 };
+
+// Import the ChevronRight icon from lucide-react
+
 
 export default CourseActivitiesCard;

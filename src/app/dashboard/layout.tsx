@@ -11,7 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <div>
             <Navbar />
-            <div className="p-16">{children}</div>
+            {children}
         </div>
     );
 }
