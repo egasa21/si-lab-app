@@ -1,5 +1,9 @@
-import LastCoursesCard from "../home/components/last-courses-card"
-import placeholderImage from '../../../../public/placeholder-img.jpg'
+"use client";
+
+import { Search, SortAsc, Grid, List, ChevronDown } from "lucide-react";
+import LastCoursesCard from "../home/components/last-courses-card";
+import MaterialCard from "./components/material-card";
+import placeholderImage from '../../../../public/placeholder-img.jpg';
 
 const LearningPage = () => {
     return (
@@ -23,11 +27,109 @@ const LearningPage = () => {
                     imageUrl={placeholderImage}
                 />
             </div>
+            
             <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
                 All Materials
             </h2>
+            
+            {/* Filter chips and controls section */}
+            <div className="flex flex-col md:flex-row justify-between gap-4">
+                {/* Status filters - left side */}
+                <div className="flex flex-wrap gap-2">
+                    <button className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium hover:bg-indigo-200 transition-colors">
+                        All Status
+                    </button>
+                    <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
+                        Not Started
+                    </button>
+                    <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
+                        In Progress
+                    </button>
+                    <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
+                        Complete
+                    </button>
+                </div>
+                
+                {/* Controls - right side */}
+                <div className="flex flex-wrap items-center gap-2">
+                    {/* Search */}
+                    <div className="relative">
+                        <input 
+                            type="text" 
+                            placeholder="Search materials" 
+                            className="pl-9 pr-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                        />
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    </div>
+                    
+                    {/* Sort dropdown */}
+                    <button className="flex items-center gap-1 px-3 py-2 border rounded-md text-sm hover:bg-gray-50">
+                        <SortAsc className="h-4 w-4" />
+                        <span>Sort By</span>
+                        <ChevronDown className="h-3 w-3 ml-1" />
+                    </button>
+                    
+                    {/* Display toggle */}
+                    <div className="flex border rounded-md overflow-hidden">
+                        <button className="flex items-center justify-center p-2 bg-indigo-500 text-white hover:bg-indigo-600 w-10">
+                            <Grid className="h-4 w-4" />
+                        </button>
+                        <button className="flex items-center justify-center p-2 bg-white text-gray-700 hover:bg-gray-50 w-10">
+                            <List className="h-4 w-4" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            {/* Materials grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                <MaterialCard 
+                    id="user-experience-optimization"
+                    type="quiz"
+                    title="5 Steps Optimizing User Experience"
+                    tags={["UI/UX Design"]}
+                    totalItems={20}
+                    itemType="Question"
+                    isPriority={true}
+                    certified={true}
+                    progress={0}
+                />
+                
+                <MaterialCard 
+                    id="usability-principles"
+                    type="page"
+                    title="Heuristics: 10 Usability Principles To improve UI Design"
+                    tags={["Learning Design", "Not Urgent"]}
+                    totalItems={12}
+                    itemType="Chapters"
+                    isPriority={false}
+                    progress={40}
+                />
+                
+                <MaterialCard 
+                    id="general-knowledge"
+                    type="learning-path"
+                    title="General Knowledge & Methodology - Layout & Spacing"
+                    tags={["Consistency"]}
+                    totalItems={20}
+                    itemType="Path"
+                    isPriority={false}
+                    progress={0}
+                />
+                
+                <MaterialCard 
+                    id="ui-design-mastery"
+                    type="course"
+                    title="Mastering UI Design for Impactful Solutions"
+                    tags={["UI/UX Design"]}
+                    totalItems={12}
+                    itemType="Materials"
+                    isPriority={false}
+                    progress={50}
+                />
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default LearningPage
+export default LearningPage;

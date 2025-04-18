@@ -1,13 +1,12 @@
 "use client";
 
-import { AlertCircle, Award, ChevronRight, Coins, FileBadge } from "lucide-react";
+import { Brain, ChevronRight, Clock, FolderGit2, Lightbulb, AlertCircle, UserCheck } from "lucide-react";
 import Link from "next/link";
 import CourseActivitiesCard from "./components/course-activities-card";
 import { Announcement } from "./components/announcement";
 import DiscussionHub from "./components/discussion-hub";
 
 export default function Page() {
-
     return (
         <div className="py-6 px-6 md:py-8 md:px-12 lg:px-24 xl:px-24 space-y-6 md:space-y-8">
             {/* Greeting Section */}
@@ -18,24 +17,24 @@ export default function Page() {
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
                     <div className="flex items-center gap-2 border rounded-md p-2 bg-gray-50">
-                        <Coins className="w-5 h-5 text-yellow-500" />
+                        <Clock className="w-5 h-5 text-purple-500" />
                         <div className="flex flex-col pe-2">
-                            <span className="text-lg font-semibold text-gray-800">100</span>
-                            <span className="text-xs text-gray-500">Points</span>
+                            <span className="text-lg font-semibold text-gray-800">14h</span>
+                            <span className="text-xs text-gray-500">Study Time</span>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 border rounded-md p-2 bg-gray-50">
-                        <Award className="w-5 h-5 text-green-500" />
+                        <Brain className="w-5 h-5 text-indigo-500" />
                         <div className="flex flex-col pe-2">
-                            <span className="text-lg font-semibold text-gray-800">100</span>
-                            <span className="text-xs text-gray-500">Badges</span>
+                            <span className="text-lg font-semibold text-gray-800">3</span>
+                            <span className="text-xs text-gray-500">Skills Mastered</span>
                         </div>
                     </div>
                     <div className="flex items-center gap-2 border rounded-md p-2 bg-gray-50">
-                        <FileBadge className="w-5 h-5 text-blue-500" />
+                        <FolderGit2 className="w-5 h-5 text-emerald-500" />
                         <div className="flex flex-col pe-2">
-                            <span className="text-lg font-semibold text-gray-800">100</span>
-                            <span className="text-xs text-gray-500">Certificates</span>
+                            <span className="text-lg font-semibold text-gray-800">5</span>
+                            <span className="text-xs text-gray-500">Projects</span>
                         </div>
                     </div>
                 </div>
