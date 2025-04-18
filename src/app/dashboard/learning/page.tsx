@@ -23,6 +23,9 @@ const LearningPage = () => {
                     imageUrl={placeholderImage}
                 />
             </div>
+            <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+                All Materials
+            </h2>
         </div>
     )
 }

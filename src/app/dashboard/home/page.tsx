@@ -1,21 +1,12 @@
 "use client";
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle, Award, ChevronRight, ClipboardList, Coins, FileBadge } from "lucide-react";
+import { AlertCircle, Award, ChevronRight, Coins, FileBadge } from "lucide-react";
 import Link from "next/link";
 import CourseActivitiesCard from "./components/course-activities-card";
-import Leaderboard from "./components/leaderboard";
 import { Announcement } from "./components/announcement";
+import DiscussionHub from "./components/discussion-hub";
 
 export default function Page() {
-    // dummy leaderboard data
-    const leaderboardUsers = [
-        { id: "1", name: "Maya Johnson", points: 1250, rank: 1, change: "same" as const },
-        { id: "2", name: "David Kim", points: 1120, rank: 2, change: "up" as const },
-        { id: "3", name: "Sarah Wilson", points: 980, rank: 3, change: "down" as const },
-        { id: "4", name: "Adolf", points: 820, rank: 4, change: "up" as const }, // Current user
-        { id: "5", name: "Raj Patel", points: 780, rank: 5, change: "down" as const },
-    ];
 
     return (
         <div className="py-6 px-6 md:py-8 md:px-12 lg:px-24 xl:px-24 space-y-6 md:space-y-8">
@@ -84,7 +75,7 @@ export default function Page() {
                     />
                 </div>
                 <div className="lg:col-span-1">
-                    <Leaderboard users={leaderboardUsers} currentUserId="4" />
+                    <DiscussionHub />
                 </div>
             </div>
         </div>
