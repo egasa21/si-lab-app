@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import LearningNavbar from "./components/navbar";
 import LearningSidebar from "./components/sidebar";
 import BottomNavbar from "./components/bottom-navbar";
+import Editor from "@/components/editor/yoopta-editor";
 
 // Define proper TypeScript interfaces
 interface ContentItem {
@@ -212,8 +213,10 @@ export default function LearningContentPage() {
                             <div className="text-sm text-gray-500 mb-2">
                                 {learningContent.currentSection} • {learningContent.currentChapter}
                             </div>
-
-                          
+                            {/*Editor - Render the content  */}
+                            <div>
+                                <Editor />
+                            </div>
                         </div>
                     </div>
 
