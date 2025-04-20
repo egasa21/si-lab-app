@@ -12,6 +12,7 @@ import {
 import { extractInitials } from "@/lib/stringUtils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -38,7 +39,18 @@ export default function Navbar() {
         <nav className="w-full border-b bg-white">
             {/* Top bar */}
             <div className="h-16 flex items-center justify-between px-6 md:px-12 lg:px-24">
-                <div className="text-xl font-bold tracking-tight">SI LAB</div>
+                <Link href="/dashboard/home">
+                    <div className="relative w-28 h-10">
+                        <Image
+                            className="dark:invert"
+                            src="/silab-logo.svg"
+                            alt="Si Lab logo"
+                            width={180}
+                            height={38}
+                            priority
+                        />
+                    </div>
+                </Link>
                 <div className="flex-1" />
                 <div className="flex items-center gap-4">
                     <MessageSquare className="w-5 h-5 cursor-pointer text-gray-600" />
