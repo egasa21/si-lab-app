@@ -65,6 +65,8 @@ export default function Navbar() {
                         <DropdownMenuContent align="end" className="w-48 mt-2">
                             <DropdownMenuItem>Profile</DropdownMenuItem>
                             <DropdownMenuItem>Settings</DropdownMenuItem>
+                            <DropdownMenuItem>Check-in Attendance</DropdownMenuItem>
+                            <DropdownMenuItem>Attendance</DropdownMenuItem>
                             <DropdownMenuItem>Logout</DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
