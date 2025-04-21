@@ -1,24 +1,6 @@
 import { X } from "lucide-react";
 import { getTypeDisplayName } from "../utils/helpers";
 
-// Define the types for your props
-interface ActiveFilters {
-    types: string[];
-    tags: string[];
-    status: "all" | "not-started" | "in-progress" | "complete";
-}
-
-interface MobileFilterDrawerProps {
-    isOpen: boolean;
-    onClose: () => void;
-    activeFilters: ActiveFilters;
-    materialTypes: string[];
-    allTags: string[];
-    toggleTypeFilter: (type: string) => void;
-    toggleTagFilter: (tag: string) => void;
-    setStatusFilter: (status: "all" | "not-started" | "in-progress" | "complete") => void;
-    clearFilters: () => void;
-}
 
 const MobileFilterDrawer: React.FC<MobileFilterDrawerProps> = ({
     isOpen,

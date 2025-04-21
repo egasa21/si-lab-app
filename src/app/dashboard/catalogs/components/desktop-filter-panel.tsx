@@ -1,20 +1,6 @@
 import { getTypeDisplayName } from "../utils/helpers";
 
-interface ActiveFilters {
-    types: string[];
-    tags: string[];
-    status: "all" | "not-started" | "in-progress" | "complete";
-}
 
-interface DesktopFilterPanelProps {
-    activeFilters: ActiveFilters;
-    materialTypes: string[];
-    allTags: string[];
-    toggleTypeFilter: (type: string) => void;
-    toggleTagFilter: (tag: string) => void;
-    setStatusFilter: (status: "all" | "not-started" | "in-progress" | "complete") => void;
-    clearFilters: () => void;
-}
 
 const DesktopFilterPanel: React.FC<DesktopFilterPanelProps> = ({
     activeFilters,

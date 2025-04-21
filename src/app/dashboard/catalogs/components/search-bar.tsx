@@ -1,9 +1,6 @@
 import { Search } from "lucide-react";
 import { useState, ChangeEvent, FormEvent } from "react";
 
-interface SearchBarProps {
-    onSearch: (query: string) => void;
-}
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     const [searchValue, setSearchValue] = useState("");

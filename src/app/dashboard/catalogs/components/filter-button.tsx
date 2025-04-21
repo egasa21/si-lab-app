@@ -1,9 +1,6 @@
 import { Filter } from "lucide-react";
 
-interface FilterButtonProps {
-    activeFilterCount: number;
-    onClick: () => void;
-}
+
 
 const FilterButton: React.FC<FilterButtonProps> = ({ activeFilterCount, onClick }) => {
     return (

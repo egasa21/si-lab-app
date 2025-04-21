@@ -1,19 +1,6 @@
 import { X } from "lucide-react";
 import { getTypeDisplayName, getStatusDisplayName } from "../utils/helpers";
 
-interface ActiveFilters {
-    types: string[];
-    tags: string[];
-    status: "all" | "not-started" | "in-progress" | "complete";
-}
-
-interface ActiveFilterChipsProps {
-    activeFilters: ActiveFilters;
-    toggleTypeFilter: (type: string) => void;
-    toggleTagFilter: (tag: string) => void;
-    setStatusFilter: (status: "all" | "not-started" | "in-progress" | "complete") => void;
-    clearFilters: () => void;
-}
 
 const ActiveFilterChips: React.FC<ActiveFilterChipsProps> = ({
     activeFilters,

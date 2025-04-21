@@ -1,10 +1,7 @@
 import { SortAsc, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-interface SortOption {
-  value: string;
-  label: string;
-}
+
 
 const SortDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
