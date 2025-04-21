@@ -2,10 +2,10 @@
 
 import { Search, SortAsc, Grid, List, ChevronDown } from "lucide-react";
 import LastCoursesCard from "../home/components/last-courses-card";
-import MaterialCard from "./components/material-card";
+import MaterialCard from "../components/material-card";
 import placeholderImage from '../../../../public/placeholder-img.jpg';
 import { useState } from "react";
-import MaterialListItem from "./components/material-list-item";
+import MaterialListItem from "../components/material-list-item";
 
 const LearningPage = () => {
     const [viewMode, setViewMode] = useState<"grid" | "list">("grid");

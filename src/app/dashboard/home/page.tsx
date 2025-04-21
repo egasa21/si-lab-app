@@ -15,7 +15,7 @@ export default function Page() {
                     <h1 className="font-bold text-2xl md:text-3xl text-gray-900">Good morning, Adolf</h1>
                     <span className="text-sm text-gray-600">Welcome to SI Lab, check your priority learning.</span>
                 </div>
-                <div className="flex flex-wrap items-center gap-3">
+                {/* <div className="flex flex-wrap items-center gap-3">
                     <div className="flex items-center gap-2 border rounded-md p-2 bg-gray-50">
                         <Clock className="w-5 h-5 text-purple-500" />
                         <div className="flex flex-col pe-2">
@@ -37,7 +37,7 @@ export default function Page() {
                             <span className="text-xs text-gray-500">Projects</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* Announcement Section */}

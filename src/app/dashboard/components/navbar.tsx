@@ -13,6 +13,12 @@ import { extractInitials } from "@/lib/stringUtils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
+
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -30,9 +36,9 @@ export default function Navbar() {
 
     const navItems = [
         { label: "Home", href: "/dashboard/home" },
-        { label: "My Learning", href: "/dashboard/learning" },
-        { label: "Catalog", href: "/dashboard/catalog" },
-        { label: "Favorites", href: "/dashboard/favorites" },
+        { label: "My Learning", href: "/dashboard/learnings" },
+        { label: "Catalog", href: "/dashboard/catalogs" },
+        { label: "Event", href: "/dashboard/events" },
     ];
 
     return (
@@ -54,7 +60,11 @@ export default function Navbar() {
                 <div className="flex-1" />
                 <div className="flex items-center gap-4">
                     <MessageSquare className="w-5 h-5 cursor-pointer text-gray-600" />
-                    <Bell className="w-5 h-5 cursor-pointer text-gray-600" />
+                    <Popover>
+                        <PopoverTrigger><Bell className="w-5 h-5 cursor-pointer text-gray-600" /></PopoverTrigger>
+                        <PopoverContent className="mt-4">Notification will goes here later Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, enim.</PopoverContent>
+                    </Popover>
+
 
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>

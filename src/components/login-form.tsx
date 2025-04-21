@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Image from "next/image"
 
 export function LoginForm({
   className,
@@ -18,9 +19,14 @@ export function LoginForm({
               href="#"
               className="flex flex-col items-center gap-2 font-medium"
             >
-              <div className="flex size-8 items-center justify-center rounded-md">
-                <GalleryVerticalEnd className="size-6" />
-              </div>
+              <Image
+                className="dark:invert"
+                src="/silab-logo.svg"
+                alt="Si Lab logo"
+                width={180}
+                height={38}
+                priority
+              />
               <span className="sr-only">IS UAD</span>
             </a>
             <h1 className="text-xl font-bold">Welcome to SI Lab</h1>
