@@ -38,7 +38,7 @@ export default function Navbar() {
         { label: "Home", href: "/dashboard/home" },
         { label: "My Learning", href: "/dashboard/learnings" },
         { label: "Catalog", href: "/dashboard/catalogs" },
-        { label: "Event", href: "/dashboard/events" },
+        { label: "Roadmap", href: "/dashboard/roadmaps" },
     ];
 
     return (
